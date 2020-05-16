@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Slider, { SliderSimpler } from "../tinycomponents/slider";
+import  { SliderSimpler , Slider } from "../tinycomponents/slider";
 import { Cardz } from "../tinycomponents/card";
 import Sidebar from "../tinycomponents/sidebar";
 
@@ -13,7 +13,6 @@ class MainHome extends Component {
   }
 
   render() {
-
     
 
 
@@ -107,7 +106,7 @@ class MainHome extends Component {
             </Col>
           </Row>
 
-          <Row className="my-5" label="secondRow">
+          {/* <Row className="my-5" label="secondRow">
 
             <Col md="5" className="offset-1  p-1 d-flex justify-content-center">
               <a href="/men">
@@ -122,7 +121,7 @@ class MainHome extends Component {
             <p className="text-center">Women</p>
             </a>
             </Col>
-          </Row>
+          </Row> */}
 
           <Row className="my-5" label="thirdRow">
             <Col md="10" className="offset-1  p-1">

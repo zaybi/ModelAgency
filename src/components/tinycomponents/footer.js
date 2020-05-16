@@ -26,7 +26,7 @@ function Footer() {
     <hr class="my-4"/>
 
     
-    <div class="pb-4">
+    <div class="pb-4" id="iconbar">
       <a href="https://www.facebook.com/toxicmodelmgmt" target="_blank">
         <i class="fab fa-facebook-f mr-3"></i>
       </a>

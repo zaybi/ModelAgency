@@ -1,4 +1,10 @@
-import React from 'react';
+import React , {useContext} from 'react';
+
+//importing the context of sidebars
+import {DetailbarContext} from '../../detailbarcontext';
+
+
+
 import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button
@@ -22,17 +28,32 @@ import {
 
 
  export const CardModel = (props) => {
+   
+  const [detailbar , setDetailbar] = useContext(DetailbarContext);
+
+
+  function SetDetailbarOpen(open) {
+    setDetailbar((prev) => !prev);
+  }
+
+
+  function handleDetailBar(e) {
+    console.log(" i am called")
+  }
+
+
+
   return (
     <div class="priders">
     <img src={props.image} /> 
-    <div class="pop">
-      <i class="fa fa-dot-circle mt-5"> Height:176cm</i>
-     <i class="fa fa-dot-circle"> Bust: 80 cm</i>
-     <i class="fa fa-dot-circle"> Waist:59 cm</i>
-     <i class="fa fa-dot-circle"> Hips:87 cm</i>
-     <i class="fa fa-dot-circle"> Eyes:Blue</i>
-     <i class="fa fa-dot-circle"> Hair:Blonde</i>
-
+    <div class="pop" onClick={() => SetDetailbarOpen(true)}>
+      <i  class="fa  mt-5" ><span class="fa fa-dot-circle"></span> Height:176cm</i>
+     <i class="fa "><span class="fa fa-dot-circle"></span>  Bust:80 cm</i>
+     <i class="fa "><span class="fa fa-dot-circle"></span>  Waist:59 cm</i>
+     <i class="fa "><span class="fa fa-dot-circle"></span>  Hips:87 cm</i>
+     <i class="fa "><span class="fa fa-dot-circle"></span>  Eyes:Blue</i>
+     <i class="fa "><span class="fa fa-dot-circle"></span>  Hair:Blonde</i>
+   
 
     </div>
    <div class="text">

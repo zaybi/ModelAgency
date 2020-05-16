@@ -1,9 +1,26 @@
+body {
+  font-family: 'Rajdhani', sans-serif;
+}
+
 .m_text {
   color: grey !important;
+  font-size: x-large;
 }
 
 .btn-grey {
   border: 1px solid #353535;
+}
+
+#iconbar {
+  padding-top: 16px;
+}
+
+#iconbar a {
+  color: grey !important;
+}
+
+#iconbar a:hover {
+  color: #000 !important;
 }
 
 #topheader {
@@ -25,17 +42,17 @@
 
 .aws-btn {
   --slider-height-percentage: 34%;
-  --slider-transition-duration: 2940ms;
+  --slider-transition-duration: 4ms;
   --organic-arrow-thickness: 4px;
   --organic-arrow-border-radius: 30px;
-  --organic-arrow-height: 17px;
+  --organic-arrow-height: 0px;
   --organic-arrow-color: #f3f3f3;
   --control-button-width: 8%;
   --control-button-height: 25%;
   --control-button-background: transparent;
   --control-bullet-color: #fad0ce;
   --control-bullet-active-color: #d5b1af;
-  --loader-bar-color: #00dfe3;
+  --loader-bar-color: #080808;
   --loader-bar-height: 6px;
 }
 
@@ -119,17 +136,17 @@
 
 #recent {
   height: 400px;
-  background-color: black;
+  background-color: #929292;
 }
 
 #news {
   height: 400px;
-  background-color: black;
+  background-color: gray;
 }
 
 #events {
   height: 400px;
-  background-color: black;
+  background-color: #646464;
 }
 
 .fa-female {
@@ -146,8 +163,8 @@
   width: 100%;
   position: relative;
   margin-top: 20px;
-  -webkit-box-shadow: 2px 2px 20px black;
-          box-shadow: 2px 2px 20px black;
+  -webkit-box-shadow: 2px 2px 20px #444444;
+          box-shadow: 2px 2px 20px #444444;
 }
 
 .priders img {
@@ -159,7 +176,6 @@
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
 }
 
 .priders .pop {
@@ -173,6 +189,7 @@
           box-shadow: 0px 1px 10px;
   -webkit-transition: height 0.5s;
   transition: height 0.5s;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .priders:hover .pop {
@@ -193,6 +210,8 @@
   transition: opacity 2s , -webkit-transform 2s;
   transition: transform 2s , opacity 2s;
   transition: transform 2s , opacity 2s , -webkit-transform 2s;
+  font-family: 'Rajdhani', sans-serif;
+  font-style: normal !important;
 }
 
 .priders:hover i {
@@ -215,6 +234,7 @@
 .priders .text h5 {
   text-align: center;
   font-size: 30px;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 /* home ends */
@@ -240,7 +260,6 @@
 .titleContainer h4 {
   text-shadow: 0px 0px 5px white;
   text-align: center;
-  border-radius: 0px 0px 10px 90px;
   background-color: #94949c;
 }
 
@@ -260,8 +279,47 @@
 .titleContainermini h4 {
   text-shadow: 0px 0px 5px white;
   text-align: center;
-  border-radius: 0px 0px 10px 90px;
   background-color: #94949c;
-  border: 4px inset goldenrod;
+}
+
+.gallery {
+  -webkit-column-count: 3;
+  column-count: 3;
+  -webkit-column-width: 33%;
+  column-width: 33%;
+}
+
+.gallery .pics {
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
+}
+
+.gallery .animation {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+@media (max-width: 450px) {
+  .gallery {
+    -webkit-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    column-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .btn.filter {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+}
+
+button.close {
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  padding-right: 1rem;
+  padding-top: .6rem;
 }
 /*# sourceMappingURL=App.css.map */

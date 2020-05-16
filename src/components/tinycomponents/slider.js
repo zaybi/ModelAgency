@@ -26,7 +26,10 @@ import Background3 from '../images/slide3.jpg';
 
 
 
-function Slider() {
+
+
+export function Slider() {
+  // nothing logical just change the css to get the cube back
 
   const AutoplaySlider = withAutoplay(AwesomeSlider);
 
@@ -47,13 +50,24 @@ function Slider() {
   );
 
 
-  return(
+  
+  return (
     <div >
- {slider}
-    </div>
+    {slider}
+       </div>
 
   )
 }
+
+
+
+
+
+
+
+
+
+
 
 // sliderSimpler starts
 
@@ -123,5 +137,3 @@ export function SliderSimpler(props) {
 
 
 
-
-export default Slider;

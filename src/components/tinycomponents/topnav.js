@@ -30,19 +30,12 @@ const Topnav = (props) => {
     <React.Fragment>
       
       <Navbar id="topnav" light expand="md" fixed>
-      <div >
-    <a href="https://www.facebook.com/toxicmodelmgmt" target="_blank">
-      <i class="fab fa-facebook fa-2x mr-3"></i>
-    </a>
-    <a href="https://www.instagram.com/toxicmodelmgmt" target="_blank">
-      <i class="fab fa-instagram fa-2x mr-3"></i>
-    </a>
-  </div>
+    
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar className="">
           <Nav className="mx-auto" navbar>
             
-            <NavItem>
+            <NavItem className="mx-3">
               <NavLink
                 tag={RRNavLink}
                 exact
@@ -50,11 +43,11 @@ const Topnav = (props) => {
                 activeClassName="active"
                 className="m_text"
               >
-                Home
+                HOME
               </NavLink>
             </NavItem>
 
-            <NavItem>
+            <NavItem className="mx-3">
               <NavLink
                 tag={RRNavLink}
                 exact
@@ -62,11 +55,11 @@ const Topnav = (props) => {
                 activeClassName="active"
                 className="m_text"
               >
-                Women
+                WOMEN
               </NavLink>
             </NavItem>
 
-            <NavItem>
+            <NavItem className="mx-3">
               <NavLink
                 tag={RRNavLink}
                 exact
@@ -74,10 +67,10 @@ const Topnav = (props) => {
                 activeClassName="active"
                 className="m_text"
               >
-                Men
+                MEN
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem className="mx-3">
               <NavLink
                 tag={RRNavLink}
                 exact
@@ -85,13 +78,13 @@ const Topnav = (props) => {
                 activeClassName="active"
                 className="m_text"
               >
-                About
+                ABOUT
               </NavLink>
-            </NavItem>
+            </NavItem  >
 
             <LoginSucess />
 
-            <NavItem>
+            <NavItem className="mx-3">
               <NavLink
                 tag={RRNavLink}
                 exact
@@ -99,9 +92,17 @@ const Topnav = (props) => {
                 activeClassName="active"
                 className="m_text"
               >
-                Contact
+                CONTACT
               </NavLink>
             </NavItem>
+            <div id="iconbar"  >
+    <a href="https://www.facebook.com/toxicmodelmgmt" target="_blank">
+      <i class="fab fa-facebook fa-lg  mr-3"></i>
+    </a>
+    <a href="https://www.instagram.com/toxicmodelmgmt" target="_blank">
+      <i class="fab fa-instagram fa-lg mr-3"></i>
+    </a>
+  </div>
           </Nav>
         </Collapse>
       </Navbar>
@@ -110,7 +111,7 @@ const Topnav = (props) => {
 };
 
 function LoginSucess() {
-  const [cart, setCart] = useContext(CartContext);
+  
   const [login, setLogin] = useContext(LoginContext);
   const [sidebar, setSidebar] = useContext(SidebarContext);
 
@@ -140,10 +141,11 @@ function LoginSucess() {
         <NavItem className="">
           <Button
             onClick={() => SetSidebarOpen(true)}
-            outline
-            className="btn-grey"
+            style={{color:"grey", background:"white", border:"1px solid white", fontSize:"26px"}}
+        
+            
           >
-            <span className="fas fa-bolt"></span> Get Scouted{" "}
+             GET SCOUTED
           </Button>
         </NavItem>
       </React.Fragment>

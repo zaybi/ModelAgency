@@ -5,10 +5,10 @@ function TopHeader() {
   return (
       <React.Fragment>
     
-    <div id="topheader">
+    <div id="topheader" className="pt-3">
       
 
-      <img style={{ height: 200 }} src={require("../images/toxicmodel.gif")} />
+      <img style={{ height: 200 }} src={require("../images/mainlogo.png")} />
     </div>
     </React.Fragment>
   );

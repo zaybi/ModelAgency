@@ -20,6 +20,7 @@ import MainHome from './views/home'
 import { CartProvider } from '../cartcontext';
 import { LoginProvider } from '../logincontext';
 import {SidebarProvider} from '../sidebarcontext';
+import {DetailbarProvider, DetailbarContext} from '../detailbarcontext';
 
 
 
@@ -36,6 +37,7 @@ import './App.css';
 
 import { StickyContainer, Sticky } from 'react-sticky';
 import SidebarBag from './tinycomponents/sidebar';
+import {Detailbar} from './tinycomponents/sidebar'
 
 function App() {
   
@@ -46,13 +48,15 @@ function App() {
    
     <Router>
       <SidebarProvider>
-      <CartProvider>
+        <DetailbarProvider>
+  
       <LoginProvider>
 
       <TopHeader />
      
       <Topnav />
       <div >
+        <Detailbar />
       <SidebarBag />
       </div>
       <div className="App">
@@ -79,7 +83,8 @@ function App() {
 
 
       </LoginProvider>
-      </CartProvider>
+  
+      </DetailbarProvider>
       </SidebarProvider>
     
     </Router>
