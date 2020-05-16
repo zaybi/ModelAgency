@@ -24,7 +24,7 @@ function About() {
                   2012.
                 </p>
                 <p>
-                    With  a deep understanding of the fashion market from their founders. Years of traveling and working experience in different markets gave TOXIX's founders a wide and comprehensive perspective of how the scouting fiels could improve it's functioning.
+                    With  a deep understanding of the fashion market from their founders. Years of traveling and working experience in different markets gave toxic's founders a wide and comprehensive perspective of how the scouting fiels could improve it's functioning.
 
                 </p>
                 <p>

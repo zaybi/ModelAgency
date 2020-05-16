@@ -425,39 +425,35 @@ function InsideDetailbar() {
 
       <div class="mb-3 pics all 2 animation">
         <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" alt="Card image cap"/>
+          <img class="img-fluid z-depth-1 rounded" src={require('../images/model2.jpg')} alt="Card image cap"/>
         </a>
       </div>
 
       <div class="mb-3 pics animation all 1">
         <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Vertical/7.jpg" alt="Card image cap"/>
+          <img class="img-fluid z-depth-1 rounded" src={require('../images/model3.jpg')} alt="Card image cap"/>
         </a>
       </div>
 
       <div class="mb-3 pics animation all 1">
         <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Vertical/4.jpg" alt="Card image cap"/>
+          <img class="img-fluid z-depth-1 rounded" src={require('../images/model4.jpg')} alt="Card image cap"/>
         </a>
       </div>
 
       <div class="mb-3 pics all 2 animation">
         <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Others/images/63.jpg" alt="Card image cap"/>
+          <img class="img-fluid z-depth-1 rounded" src={require('../images/model5.jpg')} alt="Card image cap"/>
         </a>
       </div>
 
       <div class="mb-3 pics all 2 animation">
         <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Others/images/64.jpg" alt="Card image cap"/>
+          <img class="img-fluid z-depth-1 rounded" src={require('../images/model6.jpg')} alt="Card image cap"/>
         </a>
       </div>
 
-      <div class="mb-3 pics animation all 1">
-        <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src="https://mdbootstrap.com/img/Photos/Vertical/5.jpg" alt="Card image cap"/>
-        </a>
-      </div>
+     
 
     </div>
     
