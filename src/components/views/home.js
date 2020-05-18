@@ -1,19 +1,15 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import  { SliderSimpler , Slider } from "../tinycomponents/slider";
 import { Cardz } from "../tinycomponents/card";
 import Sidebar from "../tinycomponents/sidebar";
 
 import { Col, Row } from "reactstrap";
 
-class MainHome extends Component {
-  constructor() {
-    super();
+const axios = require("axios");
 
-    this.state = {};
-  }
+function MainHome() {
 
-  render() {
-    
+
 
 
     let set1=[
@@ -156,6 +152,6 @@ class MainHome extends Component {
       </React.Fragment>
     );
   }
-}
+
 
 export default MainHome;

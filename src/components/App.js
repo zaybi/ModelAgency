@@ -17,10 +17,11 @@ import MainHome from './views/home'
 
 
 //importing contexts
-import { CartProvider } from '../cartcontext';
+
 import { LoginProvider } from '../logincontext';
 import {SidebarProvider} from '../sidebarcontext';
-import {DetailbarProvider, DetailbarContext} from '../detailbarcontext';
+import {DetailbarProvider} from '../detailbarcontext';
+import {FemaleProvider , MaleProvider , ModelCarrierProvider} from '../modelcontext';
 
 
 
@@ -47,9 +48,12 @@ function App() {
   return (
    
     <Router>
+   
       <SidebarProvider>
         <DetailbarProvider>
-  
+        <FemaleProvider>
+      <MaleProvider >
+        <ModelCarrierProvider>
       <LoginProvider>
 
       <TopHeader />
@@ -83,10 +87,12 @@ function App() {
 
 
       </LoginProvider>
-  
+      </ModelCarrierProvider>
+      </MaleProvider>
+      </FemaleProvider>
       </DetailbarProvider>
       </SidebarProvider>
-    
+     
     </Router>
   );
 }

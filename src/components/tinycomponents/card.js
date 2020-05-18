@@ -2,6 +2,7 @@ import React , {useContext} from 'react';
 
 //importing the context of sidebars
 import {DetailbarContext} from '../../detailbarcontext';
+import {ModelCarrierContext} from '../../modelcontext';
 
 
 
@@ -30,29 +31,31 @@ import {
  export const CardModel = (props) => {
    
   const [detailbar , setDetailbar] = useContext(DetailbarContext);
+  const [modelCarrier , setModelCarrier] = useContext(ModelCarrierContext);
 
 
-  function SetDetailbarOpen(open) {
+  function SetDetailbarOpen(open , event) {
+    setModelCarrier(props.model);
     setDetailbar((prev) => !prev);
+    console.log(" i am called" ,event.target.id);
+    console.log("and the model data is this" , props.model);
+  
   }
 
 
-  function handleDetailBar(e) {
-    console.log(" i am called")
-  }
 
 
 
   return (
     <div class="priders">
     <img src={props.image} /> 
-    <div class="pop" onClick={() => SetDetailbarOpen(true)}>
-      <i  class="fa  mt-5" ><span class="fa fa-dot-circle"></span> Height:176cm</i>
-     <i class="fa "><span class="fa fa-dot-circle"></span>  Bust:80 cm</i>
-     <i class="fa "><span class="fa fa-dot-circle"></span>  Waist:59 cm</i>
-     <i class="fa "><span class="fa fa-dot-circle"></span>  Hips:87 cm</i>
-     <i class="fa "><span class="fa fa-dot-circle"></span>  Eyes:Blue</i>
-     <i class="fa "><span class="fa fa-dot-circle"></span>  Hair:Blonde</i>
+    <div class="pop" onClick={(event) => SetDetailbarOpen(true, event)} id={[props.model]}>
+  <i  class="fa  mt-5" ><span class="fa fa-dot-circle"></span> Height:{props.height}cm</i>
+     <i class="fa "><span class="fa fa-dot-circle"></span>  Bust:{props.chest}cm</i>
+  <i class="fa "><span class="fa fa-dot-circle"></span>  Waist:{props.waist}cm</i>
+  <i class="fa "><span class="fa fa-dot-circle"></span>  Hips:{props.hips}cm</i>
+  <i class="fa "><span class="fa fa-dot-circle"></span>  Eyes:{props.eye}</i>
+  <i class="fa "><span class="fa fa-dot-circle"></span>  Hair:{props.hair}</i>
    
 
     </div>

@@ -1,18 +1,24 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext , useEffect } from "react";
 import Sidebar from "react-sidebar";
 import { CartContext } from "../../cartcontext";
 import { SidebarContext } from "../../sidebarcontext";
 
 import { Row, Col } from "reactstrap";
 import { DetailbarContext } from "../../detailbarcontext";
+import {ModelCarrierContext} from "../../modelcontext";
+
+
+const axios = require('axios');
 
 function SidebarBag() {
  
   const [sidebar, setSidebar] = useContext(SidebarContext);
+ 
 
   // function SetSidebarOpen(open) {
   //     setSidebar(open)
   // }
+  
 
   return (
     <Sidebar
@@ -35,7 +41,7 @@ function SidebarBag() {
         sidebar: {
           background: "#000000d6",
           position: "fixed",
-          top: "200px",
+         
           padding: "0px 0px",
           width: "100%",
           color: "white",
@@ -50,6 +56,171 @@ function SidebarBag() {
 }
 
 function InsideSidebar() {
+
+const [submitted , setSubmitted] = useState(false);
+
+const[firstName , setFirstName] = useState("");
+const[lastName , setLastName] = useState("");
+const[email , setEmail] = useState("");
+const [dob , setDob] = useState("");
+const [city , setCity] = useState("");
+const[about , setAbout] = useState("Tell us about yourself:");
+const [height , setHeight]  = useState("");
+const[chest , setChest] = useState("");
+const[waist, setWaist] = useState("");
+const[hips , setHips] = useState("");
+const[dress , setDress] = useState("");
+const[shoes , setShoes] = useState("");
+const[hairColor , setHairColor] = useState("");
+const[eyeColor , setEyeColor] = useState("");
+const[pronouns , setPronouns] = useState("");
+
+//files
+const[image1 , setImage1] = useState("");
+const[image2 , setImage2] = useState("");
+const[image3 , setImage3] = useState("");
+const[image4 , setImage4] = useState("");
+
+
+
+function handleChange(e){
+
+  console.log(e.target.name , e.target.value);
+  switch(e.target.name) {
+
+    case "firstName" : setFirstName(e.target.value); 
+    break;
+    case "lastName" :   setLastName(e.target.value);
+    break;
+    case "email" :     setEmail(e.target.value);
+    break;
+    case "dob" : setDob(e.target.value);
+    break;
+    case "city" : setCity(e.target.value);
+    break;
+    case "about" : setAbout(e.target.value);
+    break;
+    case "height" : setHeight(e.target.value);
+    break;
+    case "chest" : setChest(e.target.value);
+    break;
+    case "waist" : setWaist(e.target.value);
+    break;
+    case "hips" : setHips(e.target.value);
+    break;
+    case "dress" : setDress(e.target.value);
+    break;
+    case "shoes" : setShoes(e.target.value);
+    break;
+    case "hairColor" : setHairColor(e.target.value);
+    break;
+    case "eyeColor" : setEyeColor(e.target.value);
+    break;
+    case "pronouns" : setPronouns(e.target.value);
+
+   }
+}
+
+
+function handleFile(e) {
+  console.log(e.target.files);
+
+switch(e.target.name) {
+  case "image1" : setImage1(e.target.files[0]);
+  case "image2" :  setImage2(e.target.files[0]);
+  case "image3" : setImage3(e.target.files[0]);
+  case "image4" :   setImage4(e.target.files[0]);
+
+}
+  
+ 
+  
+
+  
+}
+
+
+function handleSubmit(e) {
+  e.preventDefault();
+
+
+   axios({
+    method: 'post',
+    url: 'http://localhost:1337/requests',
+    data: {
+  
+      "firstname": firstName,
+      "lastname": lastName,
+      "email": email,
+       "dataOfBirth": dob,
+      "about": about,
+      "height":height,
+      "chest": chest,
+      "waist":waist,
+      "hips": hips,
+      "dress": dress,
+      "shoes": shoes,
+      "hairColor": hairColor,
+      "eyeColor": eyeColor,
+      "pronoun": pronouns,
+      "country":city,
+     
+  
+     }
+  }).then(response => {
+    console.log(response);
+
+       // image stuff here
+
+  
+  let data = new FormData();
+  data.append('files' , image1);
+  data.append('files' , image2);
+  data.append('files' , image3);
+  data.append('files' , image4);
+
+data.append('ref' , 'request');
+data.append('field' , 'images');
+data.append('refId' , response.data.id);
+
+
+  axios({
+    method: 'post',
+    url: 'http://localhost:1337/upload',
+    data:data,
+
+    
+  
+
+  }).then(response =>console.log(response));
+
+// image ends here
+
+
+  }).catch(err => console.log(err))
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+  // images ends
+  
+}
+
+
+
+
   return (
     <React.Fragment>
       <div className="container-fluid">
@@ -110,12 +281,17 @@ function InsideSidebar() {
             <div class="container-fluid my-2 py-1 z-depth-1">
               <div class="row d-flex justify-content-around">
                 <div class="col-md-10">
-                  <form class="text-center" action="#!">
+                  <form class="text-center" onSubmit={handleSubmit}>
                     <p class="h4 mb-4">Form</p>
 
                     <div class="form-row mb-4">
                       <div class="col">
                         <input
+                          onChange={handleChange}
+                          value={firstName}
+                          name="firstName"
+                          required
+
                           type="text"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
@@ -124,18 +300,26 @@ function InsideSidebar() {
                       </div>
                       <div class="col">
                         <input
+                         onChange={handleChange}
+                         value={lastName}
+                         name="lastName"
                           type="text"
                           id="defaultRegisterFormLastName"
                           class="form-control"
                           placeholder="Last name"
+                          required
                         />
                       </div>
                       <div class="col">
                         <input
+                         onChange={handleChange}
+                         value={email}
+                         name="email"
                           type="email"
                           id="defaultRegisterFormLastName"
                           class="form-control"
                           placeholder="Email"
+                          required
                         />
                       </div>
                     </div>
@@ -149,18 +333,26 @@ function InsideSidebar() {
                       </div>
                       <div class="col">
                         <input
+                         onChange={handleChange}
+                         value={dob}
+                         name="dob"
                           type="date"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
-                          placeholder="First name"
+                          placeholder="dob"
+                          required
                         />
                       </div>
                       <div class="col">
                         <input
+                         onChange={handleChange}
+                         value={city}
+                         name="city"
                           type="text"
                           id="defaultRegisterFormLastName"
                           class="form-control"
                           placeholder="Current City"
+                          required
                         />
                       </div>
                     </div>
@@ -168,8 +360,14 @@ function InsideSidebar() {
 
                     {/* Third row */}
 
-                    <textarea class="form-control mb-4">
-                      Tell us about yourself:
+                    <textarea 
+                    class="form-control mb-4"
+                       onChange={handleChange}
+                          value={about}
+                          name="about"
+                          required
+                          >
+                      
                     </textarea>
 
                     {/* Third row ends */}
@@ -178,27 +376,39 @@ function InsideSidebar() {
                     <div class="form-row mb-4">
                       <div class="col">
                         <input
-                          type="text"
+                         onChange={handleChange}
+                          value={height}
+                         name="height"
+                          type="number"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
-                          placeholder="Height"
+                          placeholder="Height(cm)"
+                          required
                         />
                       </div>
                       <div class="col">
                         <input
-                          type="text"
+                         onChange={handleChange}
+                         value={chest}
+                         name="chest"
+                          type="number"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
-                          placeholder="Chest"
+                          placeholder="Chest(cm)"
+                          required
                         />
                       </div>
 
                       <div class="col">
                         <input
-                          type="text"
+                         onChange={handleChange}
+                         value={waist}
+                         name="waist"
+                          type="number"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
-                          placeholder="Waist"
+                          placeholder="Waist(cm)"
+                          required
                         />
                       </div>
                     </div>
@@ -208,23 +418,34 @@ function InsideSidebar() {
                     <div class="form-row mb-4">
                       <div class="col">
                         <input
-                          type="text"
+                         onChange={handleChange}
+                         value={hips}
+                         name="hips"
+                          type="number"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
-                          placeholder="Hips"
+                          placeholder="Hips(cm)"
+                          required
                         />
                       </div>
                       <div class="col">
                         <input
+                         onChange={handleChange}
+                         value={dress}
+                         name="dress"
                           type="text"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
                           placeholder="Dress"
+                         
                         />
                       </div>
 
                       <div class="col">
                         <input
+                         onChange={handleChange}
+                         value={shoes}
+                         name="shoes"
                           type="text"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
@@ -238,6 +459,9 @@ function InsideSidebar() {
                     <div class="form-row mb-4">
                       <div class="col">
                         <input
+                         onChange={handleChange}
+                         value={hairColor}
+                         name="hairColor"
                           type="text"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
@@ -246,6 +470,9 @@ function InsideSidebar() {
                       </div>
                       <div class="col">
                         <input
+                         onChange={handleChange}
+                         value={eyeColor}
+                         name="eyeColor"
                           type="text"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
@@ -255,6 +482,9 @@ function InsideSidebar() {
 
                       <div class="col">
                         <input
+                         onChange={handleChange}
+                         value={pronouns}
+                         name="pronouns"
                           type="text"
                           id="defaultRegisterFormFirstName"
                           class="form-control"
@@ -263,20 +493,18 @@ function InsideSidebar() {
                       </div>
                     </div>
                     {/* sixth row ends */}
-                    <button className="btn btn-info " >Add Images(4)</button>
+                    <label> 4 images (less than 2MB each) </label>
+                    <input required type="file" className="btn-upload" id="pehla" onChange={handleFile} name="image1" />
+                    <input    required type="file" className="btn-upload " id="doosri" onChange={handleFile}   name="image2" />
+                    <input    required type="file" className="btn-upload" id="teesri" onChange={handleFile}  name="image3"  />
+                    <input     required type="file" className=" btn-upload" id="chothi" onChange={handleFile}  name="image4" />
 
-                    <button class="btn btn-info my-4 btn-block" type="submit">
+                    <button class="btn btn-grey my-4 btn-block" type="submit">
                       Submit
                     </button>
 
                     <hr />
 
-                    <p>
-                      By clicking Submit you agree to our
-                      <a href="" target="_blank">
-                        -Terms of service
-                      </a>
-                    </p>
                   </form>
                 </div>
               </div>
@@ -294,7 +522,7 @@ export function Detailbar() {
   // function SetSidebarOpen(open) {
   //     setSidebar(open)
   // }
-
+console.log()
   return (
     <Sidebar
       sidebar={
@@ -331,9 +559,44 @@ export function Detailbar() {
 }
 
 function InsideDetailbar() {
+  const server = "http://localhost:1337";
+  const [modelCarrier , setModelCarrier] = useContext(ModelCarrierContext);
+  let [loading , setLoading] = useState(true);
+  let pictures = "";
+  const images =  modelCarrier.images;
+  let imagesToRender = [""];
+
+
+  if(modelCarrier.gender ==2 || modelCarrier.gender == 1) {
+    images.map( image => console.log(image.formats.small.url));
+
+imagesToRender = images.map( image => (
+  <div class="mb-3 pics all 2 animation">
+        <a data-toggle="modal" data-target="#basicExampleModal">
+          <img class="img-fluid z-depth-1 rounded" src={server + image.formats.small.url} alt="Card image cap"/>
+        </a>
+      </div>
+) , () => {
+      setLoading(false);
+  } );
+
+  
+  
+}
+
+
+console.log("g yeh images ka maal tyar hwa hai" ,imagesToRender)
+ 
+
+  
+
+
+
+ 
+
   return (
     <React.Fragment>
-     <h1 className="text-center">Thayla</h1>
+     <h1 className="text-center">{modelCarrier.firstName}</h1>
 
 
 <div className="container">
@@ -406,15 +669,15 @@ function InsideDetailbar() {
     <div class="row">
 
       <div class="col-md-12 dark-grey-text d-flex justify-content-around mb-5 text-white">
-            <p>Height:</p>
-            <p>Chest:</p>
-            <p>Waist:</p>
-            <p>Hips:</p>
-            <p>Dress:</p>
-            <p>Shoes:</p>
-            <p>Hair Color:</p>
-            <p>eye Color:</p>
-            <p>Pronouns:</p>
+  <p>Height:{modelCarrier.height}cm</p>
+            <p>Chest:{modelCarrier.chest}cm</p>
+            <p>Waist:{modelCarrier.waist}cm</p>
+            <p>Hips:{modelCarrier.hips}cm</p>
+  <p>Dress:{modelCarrier.dress}</p>
+            <p>Shoes:{modelCarrier.dress}</p>
+            <p>Hair Color:{modelCarrier.hairColor}</p>
+            <p>eye Color:{modelCarrier.eyeColor}</p>
+            <p>Pronouns:{modelCarrier.pronoun}</p>
        
 
       </div>
@@ -423,35 +686,12 @@ function InsideDetailbar() {
 
     <div class="gallery mb-5" id="gallery">
 
-      <div class="mb-3 pics all 2 animation">
-        <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src={require('../images/model2.jpg')} alt="Card image cap"/>
-        </a>
-      </div>
+     {imagesToRender}
 
-      <div class="mb-3 pics animation all 1">
-        <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src={require('../images/model3.jpg')} alt="Card image cap"/>
-        </a>
-      </div>
 
-      <div class="mb-3 pics animation all 1">
-        <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src={require('../images/model4.jpg')} alt="Card image cap"/>
-        </a>
-      </div>
 
-      <div class="mb-3 pics all 2 animation">
-        <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src={require('../images/model5.jpg')} alt="Card image cap"/>
-        </a>
-      </div>
 
-      <div class="mb-3 pics all 2 animation">
-        <a data-toggle="modal" data-target="#basicExampleModal">
-          <img class="img-fluid z-depth-1 rounded" src={require('../images/model6.jpg')} alt="Card image cap"/>
-        </a>
-      </div>
+     
 
      
 
@@ -464,5 +704,7 @@ function InsideDetailbar() {
     </React.Fragment>
   );
 }
+
+
 
 export default SidebarBag;

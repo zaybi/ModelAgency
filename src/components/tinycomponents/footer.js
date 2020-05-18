@@ -13,11 +13,11 @@ function Footer() {
     
     <div class="pt-4">
       <a class="btn btn-outline-white"
-        href="" target="_blank" role="button">Home
+        href="/"  role="button">Home
         <i class="fa fa-home ml-2"></i>
       </a>
-      <a class="btn btn-outline-white" href=""
-        target="_blank" role="button">Contact
+      <a class="btn btn-outline-white" href="/contact"
+         role="button">Contact
         <i class="fas fa-phone ml-2"></i>
       </a>
     </div>
@@ -35,29 +35,7 @@ function Footer() {
         <i class="fab fa-instagram mr-3"></i>
       </a>
 
-      <a href="" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="" target="_blank">
-        <i class="fab fa-google-plus-g mr-3"></i>
-      </a>
-
-      <a href="" target="_blank">
-        <i class="fab fa-dribbble mr-3"></i>
-      </a>
-
-      <a href="" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-
-      <a href="" target="_blank">
-        <i class="fab fa-codepen mr-3"></i>
-      </a>
+     
     </div>
     
 

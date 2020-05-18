@@ -1,3 +1,19 @@
+.btn-grey {
+  background: grey;
+}
+
+.btn-grey:hover {
+  background-color: black;
+  color: white;
+}
+
+.btn-upload {
+  color: white !important;
+  background-color: #4a4b4a;
+  padding: 10px;
+  border: 1px solid black;
+}
+
 body {
   font-family: 'Rajdhani', sans-serif;
 }
