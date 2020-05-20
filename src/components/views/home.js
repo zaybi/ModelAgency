@@ -84,7 +84,7 @@ function MainHome() {
         <Slider />
 
         <div className="container-fluid">
-          <h2 class="maintitle">oxicmodelmgmt Represents</h2>
+          <h2 class="maintitle">Toxicmodelmgmt Represents</h2>
           <h5 class="subtitle">
             The arrival that will change the way you think
           </h5>
