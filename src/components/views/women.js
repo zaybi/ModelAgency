@@ -12,7 +12,7 @@ let cardsToRender = ["dsad"];
 function Women() {
   const [female, setFemale] = useContext(FemaleContext);
   let [loading, setLoading] = useState(true);
-  const server = "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337/";
+  const server = "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337";
 
   // axio request starts(FEMALE)
 
@@ -41,10 +41,10 @@ function Women() {
           hair={model.hairColor}
           image={server + model.images[0].formats.small.url}
         />
+   { console.log("bavay is ne rola kiya hwa hau " ,server + model.images[0].formats.small.url )}
       </Col>
     ));
 
-    console.log("card are ready for launch", cardsToRender);
     console.log(
       "Navigating to the image",
       dataToRender[1].images[0].formats.small.url

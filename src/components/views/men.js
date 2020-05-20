@@ -16,7 +16,7 @@ function Men() {
 
   const [male , setMale] = useContext(MaleContext);
   let [loading , setLoading] = useState(true);
-  const server= "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337/";
+  const server= "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337";
 
   useEffect(() => {
     const server = "";
