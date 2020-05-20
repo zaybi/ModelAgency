@@ -12,13 +12,13 @@ let cardsToRender = ["dsad"];
 function Women() {
   const [female, setFemale] = useContext(FemaleContext);
   let [loading, setLoading] = useState(true);
-  const server = "http://localhost:1337";
+  const server = "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337/";
 
   // axio request starts(FEMALE)
 
   useEffect(() => {
     const server = "";
-    axios.get("http://localhost:1337/genders/2").then((response) => {
+    axios.get("http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337/genders/2").then((response) => {
       setFemale(response.data.models);
       setLoading(false);
     });

@@ -62,7 +62,7 @@ const [message , setMessage] = useState("");
      
 axios({
   method: 'post',
-  url: 'http://localhost:1337/contacts',
+  url: 'http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337/contacts',
   data: {
     firstName: firstName,
     lastName: lastName,
