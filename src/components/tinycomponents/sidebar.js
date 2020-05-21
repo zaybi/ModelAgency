@@ -494,6 +494,7 @@ data.append('refId' , response.data.id);
                     </div>
                     {/* sixth row ends */}
                     <label> 4 images (less than 2MB each) </label>
+                    <br/>
                     <input required type="file" className="btn-upload" id="pehla" onChange={handleFile} name="image1" />
                     <input    required type="file" className="btn-upload " id="doosri" onChange={handleFile}   name="image2" />
                     <input    required type="file" className="btn-upload" id="teesri" onChange={handleFile}  name="image3"  />
