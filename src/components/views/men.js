@@ -20,7 +20,7 @@ function Men() {
 
   useEffect(() => {
     const server = "";
-    axios.get("http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/genders/1").then((response) => {
+    axios.get("/genders/1").then((response) => {
       setMale(response.data.models);
       setLoading(false);
     });

@@ -146,7 +146,7 @@ function handleSubmit(e) {
 
    axios({
     method: 'post',
-    url: 'http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/requests',
+    url: '/requests',
     data: {
   
       "firstname": firstName,
@@ -186,7 +186,7 @@ data.append('refId' , response.data.id);
 
   axios({
     method: 'post',
-    url: 'http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/upload',
+    url: '/upload',
     data:data,
 
     
