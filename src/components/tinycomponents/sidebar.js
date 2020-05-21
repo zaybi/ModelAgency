@@ -146,7 +146,7 @@ function handleSubmit(e) {
 
    axios({
     method: 'post',
-    url: 'http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337/requests',
+    url: 'http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/requests',
     data: {
   
       "firstname": firstName,
@@ -186,7 +186,7 @@ data.append('refId' , response.data.id);
 
   axios({
     method: 'post',
-    url: 'http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337/upload',
+    url: 'http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/upload',
     data:data,
 
     
@@ -559,7 +559,7 @@ console.log()
 }
 
 function InsideDetailbar() {
-  const server = "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337";
+  const server = "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002";
   const [modelCarrier , setModelCarrier] = useContext(ModelCarrierContext);
   let [loading , setLoading] = useState(true);
   let pictures = "";

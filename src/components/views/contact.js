@@ -3,7 +3,7 @@ import {Alert } from 'reactstrap';
 
 
 const axios = require('axios');
-const server= "http://localhost:1337";
+const server= "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002";
 
 
 
@@ -62,7 +62,7 @@ const [message , setMessage] = useState("");
      
 axios({
   method: 'post',
-  url: 'http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:1337/contacts',
+  url: 'http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/contacts',
   data: {
     firstName: firstName,
     lastName: lastName,
