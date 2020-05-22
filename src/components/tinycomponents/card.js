@@ -48,7 +48,7 @@ import {
 
   return (
     <div class="priders">
-    <img src={props.image} /> 
+    <img src={props.image} className="greyscale" /> 
     <div class="pop" onClick={(event) => SetDetailbarOpen(true, event)} id={[props.model]}>
   <i  class="fa  mt-5" ><span class="fa fa-dot-circle"></span> Height:{props.height}cm</i>
      <i class="fa "><span class="fa fa-dot-circle"></span>  Bust:{props.chest}cm</i>

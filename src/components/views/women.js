@@ -30,7 +30,7 @@ function Women() {
     console.log("yeh data render hoga ", dataToRender);
 
     cardsToRender = dataToRender.map((model) => (
-      <Col md="4">
+      <Col xs="6"  md="4">
         <CardModel
          key={model.id.toString()}
           model={model}

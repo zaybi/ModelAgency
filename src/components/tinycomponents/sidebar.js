@@ -669,7 +669,7 @@ console.log("g yeh images ka maal tyar hwa hai" ,imagesToRender)
 
     <div class="row">
 
-      <div class="col-md-12 dark-grey-text d-flex justify-content-around mb-5 text-white">
+      <div class="col-md-12 dark-grey-text d-flex  flex-wrap justify-content-between mb-5 text-white">
   <p>Height:{modelCarrier.height}cm</p>
             <p>Chest:{modelCarrier.chest}cm</p>
             <p>Waist:{modelCarrier.waist}cm</p>
