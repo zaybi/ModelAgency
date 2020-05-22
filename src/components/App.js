@@ -46,6 +46,9 @@ function App() {
 
 
   return (
+
+    <React.Fragment>
+  
    
     <Router>
    
@@ -59,29 +62,31 @@ function App() {
       <TopHeader />
      
       <Topnav />
-      <div >
+     
         <Detailbar />
       <SidebarBag />
-      </div>
-      <div className="App">
+     
+      
         
      
       <Switch> 
 
         <Route  path={"/"} exact component={MainHome} />
+        <div className="App container-fluid">
         <Route  path={"/women"} exact component={Women} />
         <Route  path={"/men"} exact component={Men} />
         <Route  path={"/about"} exact component={About} />
         <Route  path={"/contact"} exact component={Contact} />
         <Route  path={"/login"} exact component={Login} />
         <Route  path={"/register"} exact component={Register} />
+        </div>
       </Switch>
     
   
-      <Footer />
+     
     
      
-      </div>
+      
 
 
 
@@ -94,6 +99,10 @@ function App() {
       </SidebarProvider>
      
     </Router>
+
+   
+     <Footer />
+     </React.Fragment>
   );
 }
 

@@ -19,9 +19,12 @@ import {
 
 
 
-import Background1 from '../images/slide1.jpg';
-import Background2 from '../images/slide22.jpg';
-import Background3 from '../images/slide3.jpg';
+import Background1 from '../images/slide9.jpg';
+import Background2 from '../images/slide3.jpg';
+import Background3 from '../images/slide1.jpg';
+
+import Background5 from '../images/slide4.jpg';
+import Background6 from '../images/slide6.jpg';
 
 
 
@@ -44,8 +47,13 @@ export function Slider() {
       cssModule={[CoreStyles, AnimationStyles]}
     >
       <div data-src={Background1} />
-      <div data-src={Background2} style={{}} />
+      <div data-src={Background2}  />
       <div data-src={Background3} />
+     
+      <div data-src={Background5} />
+      <div data-src={Background6} />
+
+
     </AutoplaySlider>
   );
 
@@ -110,7 +118,7 @@ export function SliderSimpler(props) {
        
       >
         <div className="d-flex justify-content-center">
-        <img src={item.src} alt={item.altText} style={{height:500, objectFit: "cover"}} />
+        <img src={item.src} alt={item.altText} className="simpleimage"  />
         </div>
       </CarouselItem>
     );

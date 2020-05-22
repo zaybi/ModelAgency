@@ -8,6 +8,32 @@
 
 }
 
+.mainlogo {
+  height: 200px;
+}
+
+
+.simpleimage{
+
+  height: 500px;
+  object-fit: cover;
+
+}
+
+@media only screen and (max-width:570px) {
+ 
+.simpleimage{
+
+  height: 250px;
+  object-fit: cover;
+
+}
+
+.mainlogo {
+  height: 150px;
+}
+
+}
 .btn-grey:hover {
   background-color: black;
   color: white;
@@ -46,7 +72,7 @@ body {
 }
 
 #topheader {
-  height: 200px;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,7 +89,7 @@ body {
 }
 
 .aws-btn {
-  --slider-height-percentage: 34%;
+  --slider-height-percentage: 44%;
   --slider-transition-duration: 4ms;
   --organic-arrow-thickness: 4px;
   --organic-arrow-border-radius: 30px;
@@ -149,7 +175,8 @@ body {
 .maintitle {
   padding-top: 40px;
   text-align: center;
-  color: red;
+  color: rgb(26, 26, 26);
+  letter-spacing: 6px;
 }
 
 .subtitle {
@@ -158,7 +185,7 @@ body {
 
 #recent {
   height: 400px;
-  background-color: #929292;
+  background-color: #5e5e5e;
 }
 
 #news {

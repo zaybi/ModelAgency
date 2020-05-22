@@ -14,22 +14,25 @@ function MainHome() {
 
     let set1=[
       {
-        src:require('../images/men.jpg'),
+        src:require('../images/simpleslider/img0.jpg'),
       },
       {
-        src:require('../images/model1.jpg'),
+        src:require('../images/simpleslider/img7.jpeg'),
       },
       {
-        src:require('../images/men.jpg'),
+        src:require('../images/simpleslider/img14.jpeg'),
       },
       {
-        src:require('../images/model1.jpg'),
+        src:require('../images/simpleslider/img1.jpg'),
       },
       {
-        src:require('../images/men.jpg'),
+        src:require('../images/simpleslider/img8.jpeg'),
       },
       {
-        src:require('../images/model1.jpg'),
+        src:require('../images/simpleslider/img15.jpeg'),
+      },
+      {
+        src:require('../images/simpleslider/img20.jpeg'),
       },
     ];
 
@@ -38,44 +41,50 @@ function MainHome() {
 
     let set2=[
       {
-        src:require('../images/model1.jpg'),
+        src:require('../images/simpleslider/img2.jpeg'),
       },
       {
-        src:require('../images/men.jpg'),
+        src:require('../images/simpleslider/img9.jpeg'),
       },
       {
-        src:require('../images/model1.jpg'),
+        src:require('../images/simpleslider/img16.jpeg'),
       },
       {
-        src:require('../images/men.jpg'),
+        src:require('../images/simpleslider/img3.jpeg'),
       },
       {
-        src:require('../images/model1.jpg'),
+        src:require('../images/simpleslider/img10.jpeg'),
       },
       {
-        src:require('../images/men.jpg'),
+        src:require('../images/simpleslider/img17.jpeg'),
       },
+      {
+        src:require('../images/simpleslider/img13.jpeg'),
+      }
     ];
 
     let set3=[
       {
-        src:require('../images/men.jpg'),
+        src:require('../images/simpleslider/img4.jpeg'),
       },
       {
-        src:require('../images/model1.jpg'),
+        src:require('../images/simpleslider/img11.jpeg'),
       },
       {
-        src:require('../images/model1.jpg'),
+        src:require('../images/simpleslider/img18.jpeg'),
       },
       {
-        src:require('../images/men.jpg'),
+        src:require('../images/simpleslider/img5.jpeg'),
       },
       {
-        src:require('../images/model1.jpg'),
+        src:require('../images/simpleslider/img12.jpeg'),
       },
       {
-        src:require('../images/men.jpg'),
+        src:require('../images/simpleslider/img19.jpeg'),
       },
+      {
+        src:require('../images/simpleslider/img6.jpeg'),
+      }
     ];
 
 
@@ -85,20 +94,20 @@ function MainHome() {
 
         <div className="container-fluid">
           <h2 class="maintitle">Toxicmodelmgmt Represents</h2>
-          <h5 class="subtitle">
-            The arrival that will change the way you think
+          <h5 class="subtitle py-3">
+          
           </h5>
           <Row>
             {/* products will render here */}
 
-            <Col md="4" className="p-2">
+            <Col xs="6" md="4" className="p-2">
               <SliderSimpler interval="1800" items={set1} />
             </Col>
-            <Col md="4" className="p-2">
-              <SliderSimpler interval="1800" items={set2} />
+            <Col xs="6" md="4" className="p-2">
+              <SliderSimpler interval="2000" items={set2} />
             </Col>
-            <Col md="4" className="p-2">
-              <SliderSimpler interval="1800" items={set3} />
+            <Col xs="12" md="4" className="p-2">
+              <SliderSimpler interval="1300" items={set3} />
             </Col>
           </Row>
 
@@ -119,7 +128,7 @@ function MainHome() {
             </Col>
           </Row> */}
 
-          <Row className="my-5" label="thirdRow">
+          {/* <Row className="my-5" label="thirdRow">
             <Col md="10" className="offset-1  p-1">
             <div className="titleContainermini">
                 <h4>Most Recent</h4>
@@ -144,7 +153,7 @@ function MainHome() {
              <div id="events"></div>
             </Col>
 
-          </Row>
+          </Row> */}
 
 
 

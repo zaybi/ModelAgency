@@ -14,14 +14,27 @@ function Women() {
   let [loading, setLoading] = useState(true);
   const server = "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002";
 
-  // axio request starts(FEMALE)
+// function for sorting names into ascending order
+  function compare(a , b ) {
+    const name1 = a.firstName.toUpperCase();
+    const name2 = b.firstName.toUpperCase();
+
+    let comparison = 0;
+    if(name1 > name2) {
+      comparison = 1;
+    }else if (name1 < name2) {
+      comparison= -1;
+    }
+    return comparison;
+  }
+  // function ends 
 
   useEffect(() => {
     const server = "";
     axios.get("http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/genders/2").then((response) => {
-      setFemale(response.data.models);
+      setFemale(response.data.models.sort(compare));
       setLoading(false);
-     
+     console.log(response.data.models)
     });
   }, []);
 
@@ -61,7 +74,7 @@ function Women() {
       </div>
       <div className="container">
         <Row className="my-4">
-  {loading ?  <img src={require('../images/loader.gif')} className="loader mx-auto"/>: <React.Fragment>{cardsToRender}</React.Fragment>  }
+  {loading ?  <img src={require('../images/loader2.gif')} className="loader mx-auto"/>: <React.Fragment>{cardsToRender}</React.Fragment>  }
          
         </Row>
       </div>

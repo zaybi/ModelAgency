@@ -6,9 +6,10 @@ function TopHeader() {
       <React.Fragment>
     
     <div id="topheader" className="pt-3">
-      
+      <a href="/">
 
-      <img style={{ height: 200 }} src={require("../images/mainlogo.png")} />
+      <img className="mainlogo" src={require("../images/mainlogo.png")} />
+      </a>
     </div>
     </React.Fragment>
   );

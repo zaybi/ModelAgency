@@ -40,7 +40,7 @@ function Footer() {
     
 
  
-    <div class="footer-copyright py-3 text-primary">
+    <div class="footer-copyright py-3 " style={{color:"black"}}>
       © 2020 Copyright: Toxicmodelmgmt
      
     </div>

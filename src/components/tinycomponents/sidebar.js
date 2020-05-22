@@ -36,6 +36,7 @@ function SidebarBag() {
         </div>
       }
       pullRight={true}
+      touch={false}
       open={sidebar}
       styles={{
         sidebar: {
@@ -146,7 +147,7 @@ function handleSubmit(e) {
 
    axios({
     method: 'post',
-    url: '/requests',
+    url: 'ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/requests',
     data: {
   
       "firstname": firstName,
@@ -670,15 +671,15 @@ console.log("g yeh images ka maal tyar hwa hai" ,imagesToRender)
     <div class="row">
 
       <div class="col-md-12 dark-grey-text d-flex  flex-wrap justify-content-between mb-5 text-white">
-  <p>Height:{modelCarrier.height}cm</p>
-            <p>Chest:{modelCarrier.chest}cm</p>
-            <p>Waist:{modelCarrier.waist}cm</p>
-            <p>Hips:{modelCarrier.hips}cm</p>
-  <p>Dress:{modelCarrier.dress}</p>
-            <p>Shoes:{modelCarrier.dress}</p>
-            <p>Hair Color:{modelCarrier.hairColor}</p>
-            <p>eye Color:{modelCarrier.eyeColor}</p>
-            <p>Pronouns:{modelCarrier.pronoun}</p>
+  <p className="mx-3"> Height:{modelCarrier.height}cm</p>
+            <p className="mx-3">Chest:{modelCarrier.chest}cm</p>
+            <p className="mx-3">Waist:{modelCarrier.waist}cm</p>
+            <p className="mx-3">Hips:{modelCarrier.hips}cm</p>
+  <p  className="mx-3">Dress:{modelCarrier.dress}</p>
+            <p className="mx-3">Shoes:{modelCarrier.dress}</p>
+            <p className="mx-3">Hair Color:{modelCarrier.hairColor}</p>
+            <p className="mx-3">eye Color:{modelCarrier.eyeColor}</p>
+            <p className="mx-3">Pronouns:{modelCarrier.pronoun}</p>
        
 
       </div>

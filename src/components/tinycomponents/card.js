@@ -50,12 +50,12 @@ import {
     <div class="priders">
     <img src={props.image} className="greyscale" /> 
     <div class="pop" onClick={(event) => SetDetailbarOpen(true, event)} id={[props.model]}>
-  <i  class="fa  mt-5" ><span class="fa fa-dot-circle"></span> Height:{props.height}cm</i>
-     <i class="fa "><span class="fa fa-dot-circle"></span>  Bust:{props.chest}cm</i>
-  <i class="fa "><span class="fa fa-dot-circle"></span>  Waist:{props.waist}cm</i>
-  <i class="fa "><span class="fa fa-dot-circle"></span>  Hips:{props.hips}cm</i>
-  <i class="fa "><span class="fa fa-dot-circle"></span>  Eyes:{props.eye}</i>
-  <i class="fa "><span class="fa fa-dot-circle"></span>  Hair:{props.hair}</i>
+  <i  class="fa  mt-5" > Height:{props.height}cm</i>
+     <i class="fa ">  Bust:{props.chest}cm</i>
+  <i class="fa ">  Waist:{props.waist}cm</i>
+  <i class="fa ">  Hips:{props.hips}cm</i>
+  <i class="fa ">  Eyes:{props.eye}</i>
+  <i class="fa ">  Hair:{props.hair}</i>
    
 
     </div>

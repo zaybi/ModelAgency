@@ -18,10 +18,25 @@ function Men() {
   let [loading , setLoading] = useState(true);
   const server= "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002";
 
+  // function for sorting names into ascending order
+  function compare(a , b ) {
+    const name1 = a.firstName.toUpperCase();
+    const name2 = b.firstName.toUpperCase();
+
+    let comparison = 0;
+    if(name1 > name2) {
+      comparison = 1;
+    }else if (name1 < name2) {
+      comparison= -1;
+    }
+    return comparison;
+  }
+  // function ends 
+
   useEffect(() => {
     const server = "";
-    axios.get("http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/genders/1").then((response) => {
-      setMale(response.data.models);
+    axios.get("http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/genders/1?_sort=firstName").then((response) => {
+      setMale(response.data.models.sort(compare));
       setLoading(false);
       console.log(" yeh hai mardana reponse bava g",response);
     }).catch(err => console.log(err));
@@ -66,7 +81,7 @@ function Men() {
       <div className="container">
 
       <Row className="my-4">
-      {loading ?  <img src={require('../images/loader.gif')} className="loader mx-auto"/>: <React.Fragment>{cardsToRender}</React.Fragment>  }
+      {loading ?  <img src={require('../images/loader2.gif')} className="loader mx-auto"/>: <React.Fragment>{cardsToRender}</React.Fragment>  }
       {/* {cardsToRender} */}
         
       </Row>
