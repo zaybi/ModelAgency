@@ -93,7 +93,7 @@ function MainHome() {
         <Slider />
 
         <div className="container-fluid">
-          <h2 class="maintitle">Toxicmodelmgmt Represents</h2>
+          <h2 class="maintitle"><span className="font-weight-bold">T</span>oxic <span className="font-weight-bold">M</span>odel <span className="font-weight-bold">M</span>gmt Represents</h2>
           <h5 class="subtitle py-3">
           
           </h5>
