@@ -12,7 +12,7 @@ let cardsToRender = ["dsad"];
 function Women() {
   const [female, setFemale] = useContext(FemaleContext);
   let [loading, setLoading] = useState(true);
-  const server = "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002";
+  const server = "http://toxicmodelmgmt.com:5002";
 
 // function for sorting names into ascending order
   function compare(a , b ) {
@@ -31,18 +31,20 @@ function Women() {
 
   useEffect(() => {
     const server = "";
-    axios.get("http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/genders/2").then((response) => {
+    axios.get("http://toxicmodelmgmt.com:5002/genders/2").then((response) => {
       setFemale(response.data.models.sort(compare));
       setLoading(false);
-     console.log(response.data.models)
+
+     console.log("yeh aya hai response zanana" ,response.data.models)
     });
   }, []);
 
   if (!loading) {
     dataToRender = female;
-    console.log("yeh data render hoga ", dataToRender);
+    // console.log("yeh data render hoga ", dataToRender);
+    //console.log("yeh image url" , dataToRender[0].images[0].formats.small.url);
 
-    cardsToRender = dataToRender.map((model) => (
+   cardsToRender = dataToRender.map((model) => (
       <Col xs="6"  md="4">
         <CardModel
          key={model.id.toString()}
@@ -56,15 +58,15 @@ function Women() {
           hair={model.hairColor}
           image={server + model.images[0].formats.small.url}
         />
-   { console.log("bavay is ne rola kiya hwa hau " ,server + model.images[0].formats.small.url )}
+   { console.log("bavay is ne rola kiya hwa hau " , model.images[0].formats , model.id)}
       </Col>
-    ));
+   ));
 
-    console.log(
-      "Navigating to the image",
-      dataToRender[1].images[0].formats.small.url
-    );
-    console.log("solving height wala rola", dataToRender[1].waist);
+    // console.log(
+    //   "Navigating to the image",
+    //   dataToRender[1].images[0].formats.small.url
+    // );
+    // console.log("solving height wala rola", dataToRender[1].waist);
   }
 
   return (

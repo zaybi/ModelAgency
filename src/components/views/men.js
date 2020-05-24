@@ -16,7 +16,7 @@ function Men() {
 
   const [male , setMale] = useContext(MaleContext);
   let [loading , setLoading] = useState(true);
-  const server= "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002";
+  const server= "http://toxicmodelmgmt.com:5002";
 
   // function for sorting names into ascending order
   function compare(a , b ) {
@@ -35,7 +35,7 @@ function Men() {
 
   useEffect(() => {
     const server = "";
-    axios.get("http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/genders/1?_sort=firstName").then((response) => {
+    axios.get("http://toxicmodelmgmt.com:5002/genders/1").then((response) => {
       setMale(response.data.models.sort(compare));
       setLoading(false);
       console.log(" yeh hai mardana reponse bava g",response);

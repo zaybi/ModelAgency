@@ -3,7 +3,7 @@ import Sidebar from "react-sidebar";
 import { CartContext } from "../../cartcontext";
 import { SidebarContext } from "../../sidebarcontext";
 
-import { Row, Col } from "reactstrap";
+import { Row, Col ,Alert } from "reactstrap";
 import { DetailbarContext } from "../../detailbarcontext";
 import {ModelCarrierContext} from "../../modelcontext";
 
@@ -12,7 +12,9 @@ const axios = require('axios');
 
 function SidebarBag() {
  
+  
   const [sidebar, setSidebar] = useContext(SidebarContext);
+
  
 
   // function SetSidebarOpen(open) {
@@ -58,7 +60,17 @@ function SidebarBag() {
 
 function InsideSidebar() {
 
+// alert stuff starts 
+
+const [visible, setVisible] = useState(true);
+
+const onDismiss = () => setVisible(false);
+// alert stuff ends
+
+
+
 const [submitted , setSubmitted] = useState(false);
+const [wait, setWait] = useState(false);
 
 const[firstName , setFirstName] = useState("");
 const[lastName , setLastName] = useState("");
@@ -147,7 +159,7 @@ function handleSubmit(e) {
 
    axios({
     method: 'post',
-    url: 'ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002/requests',
+    url: 'http://toxicmodelmgmt.com:5002/requests',
     data: {
   
       "firstname": firstName,
@@ -170,6 +182,7 @@ function handleSubmit(e) {
      }
   }).then(response => {
     console.log(response);
+    setWait(true);
 
        // image stuff here
 
@@ -187,13 +200,15 @@ data.append('refId' , response.data.id);
 
   axios({
     method: 'post',
-    url: '/upload',
+    url: 'http://toxicmodelmgmt.com:5002/upload',
     data:data,
 
     
   
 
-  }).then(response =>console.log(response));
+  }).then(response => {
+    setWait(false);
+    setSubmitted(true); });
 
 // image ends here
 
@@ -500,16 +515,27 @@ data.append('refId' , response.data.id);
                     <input    required type="file" className="btn-upload " id="doosri" onChange={handleFile}   name="image2" />
                     <input    required type="file" className="btn-upload" id="teesri" onChange={handleFile}  name="image3"  />
                     <input     required type="file" className=" btn-upload" id="chothi" onChange={handleFile}  name="image4" />
-
+                    {wait &&
+            <div className="py-3"> <Alert color="info" isOpen={visible} toggle={onDismiss}>
+            Wait.. We are just processing your application.
+          </Alert></div>  } 
+                   
+                    {submitted &&
+            <div className="py-3"> <Alert color="sucess" isOpen={visible} toggle={onDismiss}>
+            Your Application has been successfully submited!. You will be contacted soon
+          </Alert></div>  } 
                     <button class="btn btn-grey my-4 btn-block" type="submit">
                       Submit
                     </button>
 
                     <hr />
 
+
                   </form>
                 </div>
               </div>
+
+             
             </div>
           </Col>
         </Row>
@@ -561,7 +587,7 @@ console.log()
 }
 
 function InsideDetailbar() {
-  const server = "http://ec2-54-219-56-242.us-west-1.compute.amazonaws.com:5002";
+  const server = "http://toxicmodelmgmt.com:5002";
   const [modelCarrier , setModelCarrier] = useContext(ModelCarrierContext);
   let [loading , setLoading] = useState(true);
   let pictures = "";
@@ -570,7 +596,9 @@ function InsideDetailbar() {
 
 
   if(modelCarrier.gender ==2 || modelCarrier.gender == 1) {
-    images.map( image => console.log(image.formats.small.url));
+     images.map( image => console.log(image.formats.small));
+
+
 
 imagesToRender = images.map( image => (
   <div class="mb-3 pics all 2 animation">
@@ -587,7 +615,6 @@ imagesToRender = images.map( image => (
 }
 
 
-console.log("g yeh images ka maal tyar hwa hai" ,imagesToRender)
  
 
   
@@ -666,20 +693,20 @@ console.log("g yeh images ka maal tyar hwa hai" ,imagesToRender)
     <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4">portfolio</h6>
    
     <hr class="w-header my-4"/>
-    <p class="lead text-center text-muted pt-2 mb-5">I am a model and this is a dummy text about myself</p>
+  <p class="lead text-center text-muted pt-2 mb-5">{modelCarrier.about}</p>
 
     <div class="row">
 
       <div class="col-md-12 dark-grey-text d-flex  flex-wrap justify-content-between mb-5 text-white">
-  <p className="mx-3"> Height:{modelCarrier.height}cm</p>
-            <p className="mx-3">Chest:{modelCarrier.chest}cm</p>
-            <p className="mx-3">Waist:{modelCarrier.waist}cm</p>
-            <p className="mx-3">Hips:{modelCarrier.hips}cm</p>
-  <p  className="mx-3">Dress:{modelCarrier.dress}</p>
-            <p className="mx-3">Shoes:{modelCarrier.dress}</p>
-            <p className="mx-3">Hair Color:{modelCarrier.hairColor}</p>
-            <p className="mx-3">eye Color:{modelCarrier.eyeColor}</p>
-            <p className="mx-3">Pronouns:{modelCarrier.pronoun}</p>
+  <p className="mx-3"> Height: {modelCarrier.height}cm</p>
+            <p className="mx-3">Chest: {modelCarrier.chest}cm</p>
+            <p className="mx-3">Waist: {modelCarrier.waist}cm</p>
+            <p className="mx-3">Hips: {modelCarrier.hips}cm</p>
+
+            <p className="mx-3">Shoes: {modelCarrier.shoes}</p>
+            <p className="mx-3">Hair Color: {modelCarrier.hairColor}</p>
+            <p className="mx-3">Eye Color: {modelCarrier.eyeColor}</p>
+
        
 
       </div>
