@@ -58,7 +58,7 @@ function Women() {
           hair={model.hairColor}
           image={server + model.images[0].formats.small.url}
         />
-   { console.log("bavay is ne rola kiya hwa hau " , model.images[0].formats , model.id)}
+   { console.log("bavay is ne rola kiya hwa hau " , model.images , model.id)}
       </Col>
    ));
 

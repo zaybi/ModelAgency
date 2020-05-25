@@ -14,26 +14,15 @@ function MainHome() {
 
     let set1=[
       {
-        src:require('../images/simpleslider/img0.jpg'),
-      },
-      {
-        src:require('../images/simpleslider/img7.jpeg'),
-      },
-      {
-        src:require('../images/simpleslider/img14.jpeg'),
-      },
-      {
         src:require('../images/simpleslider/img1.jpg'),
       },
       {
-        src:require('../images/simpleslider/img8.jpeg'),
+        src:require('../images/simpleslider/img2.jpg'),
       },
       {
-        src:require('../images/simpleslider/img15.jpeg'),
+        src:require('../images/simpleslider/img3.jpg'),
       },
-      {
-        src:require('../images/simpleslider/img20.jpeg'),
-      },
+    
     ];
 
    
@@ -41,50 +30,28 @@ function MainHome() {
 
     let set2=[
       {
-        src:require('../images/simpleslider/img2.jpeg'),
+        src:require('../images/simpleslider/img4.jpeg'),
       },
       {
-        src:require('../images/simpleslider/img9.jpeg'),
+        src:require('../images/simpleslider/img5.jpg'),
       },
       {
-        src:require('../images/simpleslider/img16.jpeg'),
+        src:require('../images/simpleslider/img6.jpeg'),
       },
-      {
-        src:require('../images/simpleslider/img3.jpeg'),
-      },
-      {
-        src:require('../images/simpleslider/img10.jpeg'),
-      },
-      {
-        src:require('../images/simpleslider/img17.jpeg'),
-      },
-      {
-        src:require('../images/simpleslider/img13.jpeg'),
-      }
+     
     ];
 
     let set3=[
       {
-        src:require('../images/simpleslider/img4.jpeg'),
+        src:require('../images/simpleslider/img7.jpg'),
       },
       {
-        src:require('../images/simpleslider/img11.jpeg'),
+        src:require('../images/simpleslider/img8.jpg'),
       },
       {
-        src:require('../images/simpleslider/img18.jpeg'),
+        src:require('../images/simpleslider/img9.jpg'),
       },
-      {
-        src:require('../images/simpleslider/img5.jpeg'),
-      },
-      {
-        src:require('../images/simpleslider/img12.jpeg'),
-      },
-      {
-        src:require('../images/simpleslider/img19.jpeg'),
-      },
-      {
-        src:require('../images/simpleslider/img6.jpeg'),
-      }
+      
     ];
 
 
