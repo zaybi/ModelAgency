@@ -2,6 +2,11 @@
   background: grey;
 }
 
+.btn-follow {
+  position: absolute;
+  bottom: 5px;
+}
+
 .greyscale {
   filter: grayscale(100%);
   

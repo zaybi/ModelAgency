@@ -237,6 +237,8 @@ data.append('refId' , response.data.id);
 
 
 
+
+
   return (
     <React.Fragment>
       <div className="container-fluid">
@@ -554,7 +556,7 @@ console.log()
   return (
     <Sidebar
       sidebar={
-        <div>
+        <div id="portfolioContainer">
           <button
             onClick={() => setDetailbar(false)}
             className="m-3 btn btn-bag btn-primary "
@@ -564,6 +566,8 @@ console.log()
 
           <hr />
           <InsideDetailbar />
+          <hr/>
+        
         </div>
       }
      
